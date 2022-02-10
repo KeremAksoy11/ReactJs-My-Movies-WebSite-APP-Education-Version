@@ -1,79 +1,139 @@
 import React from 'react';
 import MovieList from './MovieList';
-import About from './About';
-
-
+import Search from './Search';
+import AddMovie from './AddMovie';
+import axios from 'axios';
+import EditMovie from './EditMovie';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 class App extends React.Component {
+
     state = {
-        movies : [
-            {
-                "id": 1,
-                "name": "The Flash",
-                "rating": 8.3,
-                "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-                "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qs7zl4XxPqfczYpQHTeHwI1WoGv.jpg"
-            },
-        
-            {
-                "id": 2,
-                "name": "Interstellar",
-                "rating": 6.8,
-                "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-                "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/y1TKElkgWOl90iFik3GHlgJdphm.jpg"
-            },
-        
-            {
-                "id": 3,
-                "name": "Arrow",
-                "rating": 7.9,
-                "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-                "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/v6zknpjyE9NyBj6MCnlZJ1w58Se.jpg"
-            },
-            {
-                "id": 4,
-                "name": "DC's Legends of Tomorrow",
-                "rating": 7.3,
-                "overview": "This is a wider card with supporting text below as a natural lead-in to additional content.",
-                "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lN7Hx9MbnCbUdGAmomk6pCmUOJ8.jpg"
-            }
-
-
-        ]
-
+        movies: [],
+        searchQuery: ""
     }
 
-    deleteMovie = (movie) => {
+     componentDidMount() {
+       this.getMovies();
+    }
+
+    
+    async getMovies() {
+        const response = await axios.get("http://localhost:3002/movies");
+        this.setState({ movies: response.data })
+    }
+
+
+    // DELETE MOVİE AXIOS API
+    deleteMovie = async (movie) => {
+
+        axios.delete(`http://localhost:3002/movies/${movie.id}`)
         const newMovieList = this.state.movies.filter(
             m => m.id !== movie.id
         );
+        this.setState(state => ({
+            movies: newMovieList
+        }))
+    }
 
-        this.setState({
-            movies : newMovieList
-        })
+
+    // SEARCH MOVİE
+    searchMovie = (event) => {
+        this.setState({ searchQuery: event.target.value })
+    }
+
+    // ADD MOVİE
+    addMovie = async (movie) => {
+        await axios.post(`http://localhost:3002/movies/`, movie)
+        this.setState(state => ({
+            movies:state.movies.concat([movie])
+        }))
+        this.getMovies();
+    }
+
+    //Edit Movie
+    EditMovie = async (id, updatedMovie) => {
+        await axios.put(`http://localhost:3002/movies/${id}`, updatedMovie)
+        this.getMovies();
     }
 
     render() {
-        return (
-            <div>
-               <div className='container'>
-                <div className='row'>
-                    <div className='col-lg-12'>
 
-                    </div>
+        let filteredMovies = this.state.movies.filter(
+            (movie) => {
+                return movie.name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
+            }
+        ).sort((a,b) => {
+            return a.id < b.id ? 1 : a.id > b.id ? -1 : 0;
+        });
+
+        return (
+            <Router>
+
+                <div className="container">
+
+                    <Switch>
+
+
+
+                        <Route path="/" exact render={() => (
+                            <React.Fragment>
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <Search searchMovieProp={this.searchMovie} />
+                                    </div>
+                                </div>
+
+
+                                <MovieList
+                                    movies={filteredMovies}
+                                    deleteMovieProp={this.deleteMovie}
+
+                                />
+                            </React.Fragment>
+                        )}>
+
+                        </Route>
+
+
+                        <Route path="/add" exact render={({history}) => (
+                            <AddMovie 
+                            onAddMovie = {(movie)=> {this.addMovie(movie)
+                                history.push("/")
+                            }
+                        }
+                            
+                            />
+                        )}>
+
+                        </Route>
+                        
+                        <Route path='/edit/:id' render={(props) => (
+                            <EditMovie 
+                            {...props}
+
+                            onEditMovie = {(id ,movie)=> 
+                                {this.EditMovie(id,movie)
+                         
+                            }
+                        }
+                            
+                            />
+                        )}>
+
+                        </Route>
+
+
+                    </Switch>
                 </div>
-                <MovieList
-                movies={this.state.movies}
-                deleteMovieProp = {this.deleteMovie}/>
-               </div>
-            </div>
-            
+
+            </Router>
         )
+
     }
 
-};
 
+}
 
 export default App;
-

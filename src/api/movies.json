@@ -1,0 +1,60 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Flash",
+      "rating": 8.3,
+      "overview": "Barry Allen, who has experienced a large tragedy in his past, is a forensic laboratory assistant that collects the clues that work in the Central City Police Unit and leaving the criminals behind the criminals. After living an unfortunate lightning accident, Barry has a super-speed power, the Flash identity and the bad guys are served to deliver to justice!",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qs7zl4XxPqfczYpQHTeHwI1WoGv.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Arrow",
+      "rating": 7.9,
+      "overview": "After a violent shipwreck, billionaire playboy Oliver Queen goes missing and was presumed dead for five years until he is discovered living on a remote island in the Pacific. At that time, Oliver trained himself on the island, passed many tests and had to fight for his life. When he returns home to Starling City, he is greeted by his doting mother Moira, his much-loved sister Thea and best friend Tommy, but they feel that Oliver's troubles on the island have changed him. When Oliver is reunited with his family, he discovers that there are many secrets he does not yet know. When he impersonates Arrow, he fights to kill businessmen who get involved in dirty business to get rich.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/v6zknpjyE9NyBj6MCnlZJ1w58Se.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Narcos",
+      "rating": 7.9,
+      "overview": "In this gangster drama, you will follow the true story of Colombia's violent and powerful drug cartels.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uwXAfcxp4r6iM5y89J5bfiFKB6S.jpg"
+    },
+    {
+      "id": 6,
+      "name": "The Office",
+      "rating": 8.6,
+      "overview": "He is the victim of the company, the victim of the innocent games, occasionally, the victim of innocent games, the victim of the innocent games by seeing the happiness of his employees: Michael Scott. With the staff of different age groups, which are all of them, it is a look at the lives of the Office employees; Bored at the same time the talented salesman Jim, his sociopath, the enemy of sociopath, dwight, polite and honest receptionist Pam and reluctant, indifferent interns Ryan.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1iJijpiHp4UTmaJt0J9Hq2SnkB4.jpg"
+    },
+    {
+      "name": "American Psycho",
+      "rating": "7.4",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/q1XYoV62YTSvp2xe7vWdPpNwtET.jpg",
+      "overview": "Patrick Bateman, who works for his father's company on Wall Street, is a young and good-looking man. From the outside, Bateman is a normal person, but in reality he kills people aimlessly and collects parts of women's bodies at home. Adapted from Bret Easton Ellis's resonant novel of the same name, the film is a satire on the greedy urban life of the 1980s.",
+      "id": 7
+    },
+    {
+      "name": "Ip Man 3",
+      "rating": "7.0",
+      "overview": "1959, Ip Man (Donnie Yen) is starting to get used to his quiet life in Hong Kong. His eldest son Ip Chun returned to Foshan, while his younger son Ip Ching and his wife stayed with him. The school building where Ip Ching is studying is on very valuable land, and American real estate dealer Frank (Mike Tyson) orders his men to take that land at any cost. To protect the school, Ip and his students will once again embark on a very dangerous adventure.",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nQqRnRMaRlo155iGEObE2aJe3oa.jpg",
+      "id": 8
+    },
+    {
+      "name": "Fight Clup",
+      "rating": "9.0",
+      "overview": "The first rule of fight club is not to talk about fight club. The second rule of fight club is not to talk about the club... The protagonist of the movie, Jack, an insurance investigator suffering from depression in the whirlpools of his ordinary life, joins therapy groups that provide moral support to cancer patients in order to overcome his insomnia and add meaning to his life, even though he does not have cancer. There, he forms an awkward relationship with a girl named Marla Singer. Returning from a business trip, she meets the eccentric character named Tyler Durden. Durden is like the man Jack wanted to be but couldn't be. Fight club, which started as an underground activity with Tyler's attempts, will open new doors in Jack's life... And of course, Marla will pass through these doors inevitably... But... Who is Tyler Durden really?",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/dMgcjU3uaL9BhizmZbrGJsPQ8h4.jpg",
+      "id": 9
+    },
+    {
+      "name": "Mr. Robot",
+      "rating": "8.2",
+      "imageURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/q7FzUmsCtYNAwWZ5PTACZLngssg.jpg",
+      "overview": "Get ready to enter the exciting world of Elliot, who works at a software security company during the day and is the hero of the virtual universe at night! In the series, which is a successful psychological thriller with its intriguing scenario, the leading role of Rami Malek is accompanied by the famous actor Christian Slater in the role of Mr. Robot.",
+      "id": 10
+    }
+  ]
+}
